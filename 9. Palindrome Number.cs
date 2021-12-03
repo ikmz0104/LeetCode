@@ -2,7 +2,7 @@ public class Solution {
     public bool IsPalindrome(int num) {
         
         //例外を先に除く
-        if ()
+        if (num < 0)
         {
             return false;
         }
