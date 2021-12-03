@@ -1,25 +1,23 @@
 public class Solution {
     //動的返却
     public int RomanToInt(string s) {
-            int InitialValue = 0;
             int AnsValue = 0;
+            int TmpValue = 0;
 
+        //文字列の末尾から攻めるスタイル
             for(int i=1; i <= s.Length; i++)
             {
-                //文字列のi番目のValue < i+1番目のValue　なら差
-                if (StaticRomanToInt(s[s.Length - i]) >= AnsValue)
+                if (StaticRomanToInt(s[s.Length - i]) >= TmpValue)
                 {
-                    InitialValue += StaticRomanToInt(s[s.Length - i]);
+                    AnsValue += StaticRomanToInt(s[s.Length - i]);
                 }
-                //文字列のi番目のValue > i+1番目のValue　なら和
                 else
                 {
-                    InitialValue -= StaticRomanToInt(s[s.Length - i]);
+                    AnsValue -= StaticRomanToInt(s[s.Length - i]);
                 }
-
-                AnsValue = StaticRomanToInt(s[s.Length - i]);
+                TmpValue = StaticRomanToInt(s[s.Length - i]);
             }
-        return InitialValue;
+        return AnsValue;
     }
     
     //静的返却
