@@ -1,18 +1,32 @@
 public class Solution {
     public int RomanToInt(string s) {
+        
+        //ハッシュテーブルの宣言
+        Dictionary<string, int> KeyValueData = new Dictionary<string, int>();
+        
+        //値のセット
+        {'I', 1};
+        {'V', 5};
+        {'X', 10};
+        {'L', 50};
+        {'C', 100};
+        {'D', 500};
+        {'M', 1000};
+        
+        //値を取り出す
+        int Value = KeyValueData["Key1"];
+        
+        //返却される値をansに加算していく
         int ans = 0;
-        //3文字目まで各桁のValueの対応を見る
-        for(int i=0; i<s.Length; i++)
+        
+        //1文字目と2文字目のValueを比較
+        for (int i=0; i<s.Length; i++)
         {
-            if (s[i] == 'I')
+            if(s[i] < s[i+1])
             {
-                ans += 1;
-            }
-            else
-            {
-                break;
+                ans = V - I;
+                return ans;
             }
         }
-        return ans;
     }
 }
