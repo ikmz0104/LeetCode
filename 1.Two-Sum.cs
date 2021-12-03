@@ -1,18 +1,18 @@
 public class Solution {
     public int[] TwoSum(int[] nums, int target) {
-        //解答用
+        
+        //空のキーバリューストアを宣言
         Dictionary<int, int> ans = new Dictionary<int, int>();
 
         for (int i=0; i<nums.Length; i++)
         {
-            //差分
-            int left_num = target - nums[i]; 
+            int diff = target - nums[i]; 
             
-            //差分の検知
-            if(ans.ContainsKey(left_num))
+            if(ans.ContainsKey(diff)
             {
-                return new int[] {ans[left_num], i};
+                return new int[] {ans[i], i};
             }
+            //空のansにkeyvalueを追加
             else if(!ans.ContainsKey(nums[i]))
             {
                 ans.Add(nums[i], i);
