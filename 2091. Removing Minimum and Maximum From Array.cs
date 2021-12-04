@@ -35,31 +35,25 @@ public class Solution {
         
         //最大値と最小値を削除するための最小工数を出す
         
-        //配列の前半分の長さに両方収まる
-        if(minimum_i and maximum_i <= nums.Length)   
+        //最大値と最小値の配列の順番に対して、最大と最小を求める
+        int[] numbers = { maximum_i, minimum_i }; 
+        int max_order = (numbers.Max());
+        int min_order = (numbers.Min());
+        
+        //max_orderが配列の長さの半分以下の場合
+        if(max_order <= nums.Length / 2)
         {
-            if (minimum_i < maximum_i)
-            {
-                return maximum_i;
-            }
-            else
-            {
-                return minimum_i;
-            }
+            return max_order; 
         }
         
-        //配列の後半分の長さに両方収まる（配列の長さが偶数とは限らないと気づいて詰んだ）
-        if(minimum_i and maximum_i <= nums.Length)   
+        //max_orderが配列の長さの半分より大きい場合
+        else if(max_order > nums.Length / 2)
         {
-            if (minimum_i < maximum_i)
-            {
-                return maximum_i;
-            }
-            else
-            {
-                return minimum_i;
-            }
+            return min_order + (nums.Length - max_order);
         }
-        
+        else
+        {
+            return null;
+        }
     }
 }
