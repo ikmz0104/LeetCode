@@ -23,6 +23,8 @@ public class Solution {
         }
         
         return sort_i;
+
+        //余計な配列要素の0を削除したいがうまくいかない
     }
 }
 
