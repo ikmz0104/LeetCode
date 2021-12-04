@@ -13,31 +13,36 @@ public class Solution
             int Max_index = 0;
             int Minimum_num = nums[minIndex];
             int Maximum_num = nums[maxIndex];
+            int left_num = 0;
+            int right_num = 0;
             
             for(int i=0; i<nums.Length; i++)
             {
                 if(nums[i] < Minimum_num)
                 {
                     Minimum_num = nums[i];
-                    Min_index = i
+                    Min_index = i;
                 }
                 else if(nums[i] > Maximum_num)
                 {
                     Maximum_num = nums[i];
-                    Max_index = i
+                    Max_index = i;
                 }
             }
             
-            //得られたMin_indexとMax_indexの位置を比較するのです。
-            //Min_indexがMax_indexよりも大きいとき（これはどっちが大きいとかは関係ない、大小による場合分けは一つでOK）
-            if(Min_index > Max_index)
+            //Min_indexとMax_indexをシンプルに比較するのです。
+            if(Min_index < Max_index)
             {
-                int Tmp_index = Min_index;
-                Min_index = Max_index;
-                Max_index = Tmp_index;
+                left_num = Min_index;
+                right_num = Max_index;
+            }
+            else if(Min_index > Max_index)
+            {
+                left_num = Max_index;
+                right_num = Min_index;
             }
             
-            //最小値を一つ得る
-            int minmin = ,,
+            //最小工数で最大値と最小値を省いていくのです。
+            
         }
 }
