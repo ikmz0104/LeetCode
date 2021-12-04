@@ -1,20 +1,37 @@
 public class Solution {
     public IList<int> TargetIndices(int[] nums, int target) {
         
-        //ソートします。
-        nums = Array.Sort(nums);
+        int[] ans = new int[nums.Length];
+        for(int i = 0; i < nums.Length; i++)
+        {
+            ans[i] = nums[i];
+        }
         
-        int [] ans = new int[];
+        //ソートします。
+        Array.Sort( ans );
+        
+        //sort_i
+        int[] sort_i = new int[nums.Length];
         
         //targetに一致するnums[i]のindexを求めます。
         for(int i = 0; i < nums.Length; i++)
         {
-            if(nums[i] == target)
+            if(ans[i] == target)
             {
-                ans[i] = nums[i];
+                sort_i[i] = i;
             }
         }
         
-        return ans;
+        return sort_i;
     }
 }
+
+// Wrong Answer
+// Runtime: 146 ms
+// Your input
+// [1,2,5,2,3]
+// 2
+// Output
+// [0,1,2,0,0]
+// Expected
+// [1,2]
